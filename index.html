@@ -75,12 +75,7 @@
         }
         .section-content {
             padding: 0 30px;
-            max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        .section-content.open {
-            max-height: 1000px; /* Adjust this value as needed */
         }
         h2 {
             margin: 0;
@@ -171,7 +166,6 @@
         <section id="about">
             <div class="section-header">
                 <h2>About Me</h2>
-                <span class="toggle">+</span>
             </div>
             <div class="section-content open">
                 <p>My name is Nils Everling. I live in Stockholm, Sweden where I work as a quant portfolio manager within the systematic equities group at AP4. I do a bit of hiking and I have a passion for film (see my Cinetrii project or follow me on <a href="https://boxd.it/1w3fn" alt="Letterboxd link">Letterboxd</a>).</p>
@@ -183,9 +177,8 @@
         <section id="education">
             <div class="section-header">
                 <h2>Education</h2>
-                <span class="toggle">+</span>
             </div>
-            <div class="section-content">
+            <div class="section-content open">
                 <p>I studied at KTH and received my M.Sc.Eng in computer science in 2017. For my <a href="https://urn.kb.se/resolve?urn=urn:nbn:se:kth:diva-210253">master thesis</a> I devised a way of estimating sector risk of equities using topic modeling on earnings call transcripts.</p>
 
                 <div class="featured-grid">
@@ -206,9 +199,8 @@
         <section id="projects">
             <div class="section-header">
                 <h2>Projects</h2>
-                <span class="toggle">+</span>
             </div>
-            <div class="section-content">
+            <div class="section-content open">
                 <div class="featured-grid">
                     <div class="main-item"><a href="https://cinetrii.com" alt="Cinetrii.com"><img src="img/heat.png"></a>
                   </div>
@@ -330,10 +322,6 @@
                 </div>
 
 
-
-
-
-
                 <p>Cinetrii started out as a project in Java but has since been migrated to Python, which is far more suitable for NLP 🙂</p>
         </div>
         </section>
@@ -341,9 +329,8 @@
         <section id="tech">
             <div class="section-header">
                 <h2>Tech I like</h2>
-                <span class="toggle">+</span>
             </div>
-            <div class="section-content">
+            <div class="section-content open">
                 <ul>
                     <li><a href="https://streamlit.io">Streamlit</a> - I have been using it since I saw it on Hacker News in 2019. Streamlit makes it easy to develop and deploy webapp tools and monitors for internal use. Before, python data scientists who wanted to bring a notebook to production had to use Flask, and I'd rather not get bogged down with frontend code.</li>
                     <li><a href="https://github.com/AndyTheFactory/newspaper4k">Newspaper4k</a> - Continuation of Newspaper3k. Article text retrieval from news websites. Super useful for Cinetrii.</li>
@@ -358,27 +345,6 @@
         <p>&copy; 2024 Nils Everling</p>
     </footer>
 
-    <script>
-      document.querySelectorAll('.section-header').forEach(header => {
-          const content = header.nextElementSibling;
-          const toggle = header.querySelector('.toggle');
 
-          if (content.classList.contains('open')) {
-              content.style.maxHeight = content.scrollHeight + "px";
-          }
-
-          header.addEventListener('click', () => {
-              if (content.style.maxHeight) {
-                  content.style.maxHeight = null;
-                  toggle.textContent = '+';
-                  content.classList.remove('open');
-              } else {
-                  content.style.maxHeight = content.scrollHeight + "px";
-                  toggle.textContent = '-';
-                  content.classList.add('open');
-              }
-          });
-      });
-  </script>
 </body>
 </html>
