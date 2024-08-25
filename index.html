@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nils Everling - Personal Website</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --background-color: #1a1a1a;
+            --section-color: #2a2a2a;
+            --text-color: #e0e0e0;
+        }
+                /* unvisited link */
+        a:link {
+          color: white;
+        }
+
+        /* visited link */
+        a:visited {
+          color: gray;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        nav {
+            background-color: var(--section-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        section {
+            background-color: var(--section-color);
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .section-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .section-content {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .section-content.open {
+            max-height: 1000px; /* Adjust this value as needed */
+        }
+        h2 {
+            margin: 0;
+        }
+        h3 {
+            color: var(--primary-color);
+        }
+        .image-placeholder {
+            background-color: #3a3a3a;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            color: #888;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--section-color);
+            color: var(--text-color);
+        }
+
+    .featured-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .featured-item {
+        text-align: center;
+    }
+    .featured-item a {
+        display: block;
+        text-decoration: none;
+        color: var(--text-color);
+        transition: transform 0.3s ease;
+    }
+    .featured-item a:hover {
+        transform: scale(1.05);
+    }
+    .featured-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .featured-item p {
+        margin-top: 10px;
+        font-size: 0.9em;
+    }
+
+    .main-item {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+      text-align: center;
+
+    }
+    .main-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nils Everling</h1>
+        <p>Quant Portfolio Manager | Programmer | Film Buff</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#tech">Tech I Like</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <span class="toggle">+</span>
+            </div>
+            <div class="section-content open">
+                <p>My name is Nils Everling. I live in Stockholm, Sweden where I work as a quant portfolio manager within the systematic equities group at AP4. I do a bit of hiking and I have a passion for film (see my Cinetrii project or follow me on <a href="https://boxd.it/1w3fn" alt="Letterboxd link">Letterboxd</a>).</p>
+            </div>
+        </section>
+
+
+
+        <section id="education">
+            <div class="section-header">
+                <h2>Education</h2>
+                <span class="toggle">+</span>
+            </div>
+            <div class="section-content">
+                <p>I studied at KTH and received my M.Sc.Eng in computer science in 2017. For my <a href="https://urn.kb.se/resolve?urn=urn:nbn:se:kth:diva-210253">master thesis</a> I devised a way of estimating sector risk of equities using topic modeling on earnings call transcripts.</p>
+
+                <div class="featured-grid">
+
+                    <div class="featured-item"><a href="amzn.png"><img src="img/amzn.png" alt="Amazon.com exposures">
+                    <p>Amazon.com - a company with many sector exposures like retail, cloud, streaming and logistics.</p>
+                  </a></div>
+
+                    <div class="featured-item"><a href="pca.html"><img src="img/pca.png" alt="PCA">
+                    <p>The sector model reduced to 3 principal components for visualization. GICS Industry Groups overlaid in color.</p>
+                  </a></div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="projects">
+            <div class="section-header">
+                <h2>Projects</h2>
+                <span class="toggle">+</span>
+            </div>
+            <div class="section-content">
+                <div class="featured-grid">
+                    <div class="main-item"><a href="https://cinetrii.com" alt="Cinetrii.com"><img src="img/heat.png"></a>
+                  </div>
+                </div>
+
+
+
+                <p><a href="https://cinetrii.com">Cinetrii.com</a> caters to my own interest in film. It maps out the lineage of films - which previous works have inspired a given film, and what that film has in turn inspired. It does so by aggregating references and name drops by film critics, who are generally knowledgeable in film history. I built Cinetrii in 2016 and sporadically work on it.</p>
+                <p>Huffington Post called it "the best movie recommendation webapp we’ve come across".
+
+                <div class="featured-grid">
+                    <div class="main-item"><a href="https://cinetrii.com?i=tt0053619" alt="Cinetrii.com (L'Avventura)"><img src="img/anatolia.png" alt="L'Avventura">
+                    <p>A connection established between <i>Once Upon a Time in Anatolia</i> and <i>L'Avventura</i></p>
+                  </div></a>
+                </div>
+
+                <h4>Featured In:</h4>
+        <div class="featured-grid">
+            <div class="featured-item">
+                <a href="https://gizmodo.com/a-way-to-search-for-film-recommendations-without-the-tr-1792001690">
+                    <img src="img/gizmodo.png" alt="Gizmodo">
+                    <p>Gizmodo</p>
+                </a>
+            </div>
+            <div class="featured-item">
+                <a href="https://www.huffingtonpost.com/entry/huffpost-hill-funny-story-about-this-manic-sleep-deprived-narcissist-we-know_us_58892160e4b0737fd5cb70c5">
+                    <img src="img/huffpo.png" alt="Huffington Post">
+                    <p>Huffington Post</p>
+                </a>
+            </div>
+            <div class="featured-item">
+                <a href="https://lifehacker.com/how-to-find-new-movies-with-influences-similar-to-your-1845116442">
+                    <img src="img/lifehacker.jpeg" alt="Lifehacker">
+                    <p>Lifehacker</p>
+                </a>
+            </div>
+            <div class="featured-item">
+                <a href="https://birdinflight.com/en/news/industry/20170206-cinetrii-movie-recomendations.html">
+                    <img src="img/birdsinflight.png" alt="Bird in Flight">
+                    <p>Bird in Flight</p>
+                </a>
+            </div>
+            <div class="featured-item">
+                <a href="https://www.scoutmag.ph/entertainment/cinetrii-film-recommendation-bn-katc-20200923">
+                    <img src="img/scout.jpg" alt="Scoutmag">
+                    <p>Scoutmag</p>
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="featured-grid">
+            <div class="featured-item">
+                <a href="https://www.mentalfloss.com/article/630731/cinetrii-crowdsourced-movie-recommendations">
+                    <img src="img/mentalfloss.png" alt="Mentalfloss">
+                    <p>Mentalfloss</p>
+                </a>
+            </div>
+            <div class="featured-item">
+                <a href="https://www.makeuseof.com/unique-ways-to-find-film-and-tv-show-recommendations/">
+                    <img src="img/makeuseof.jpeg" alt="MakeUseOf">
+                    <p>MakeUseOf</p>
+                </a>
+            </div>
+
+            <div class="featured-item">
+                <a href="https://web.archive.org/web/20160905075516/http://www.cineactual.net/2016/09/las-similitudes-e-influencias-las-peliculas/">
+                    <img src="img/cineactual.png" alt="CineActual">
+                    <p>CineActual</p>
+                </a>
+            </div>
+
+            <div class="featured-item">
+                <a href="https://www.youtube.com/watch?v=yPvyrPcJisg">
+                    <img src="img/dong.jpg" alt="DONG">
+                    <p>DONG</p>
+                </a>
+            </div>
+
+            <div class="featured-item">
+                <a href="https://www.apartmenttherapy.com/cinetrii-movie-recommendations-36828660">
+                    <img src="img/apartmenttherapy.png" alt="Apartment Therapy">
+                    <p>Apartment Therapy</p>
+                </a>
+            </div>
+        </div>
+
+
+
+                <div class="featured-grid">
+                    <div class="featured-item">
+                        <a href="https://www.nouvart.net/oyle-bir-site-ki-izlemek-istediginiz-filmin-basat-ozelliklerini-girin-alternatiflerini-aninda-onunuze-koysun/">
+                            <img src="img/nouvart.png" alt="Nouvart">
+                            <p>Nouvart</p>
+                        </a>
+                    </div>
+                    <div class="featured-item">
+                        <a href="https://www.redaccion.com.ar/tiktok-quiere-formar-una-coalicion-de-redes-sociales-contra-los-contenidos-daninos/">
+                            <img src="img/redaccion.jpeg" alt="Redacción">
+                            <p>Redacción</p>
+                        </a>
+                    </div>
+
+                    <div class="featured-item">
+                        <a href="https://archive.recomendo.com/posts/discover-the-inspiration-behind-a-movie?rq=cinetrii">
+                            <img src="img/recomendo.jpeg" alt="Recomendo">
+                            <p>Recomendo</p>
+                        </a>
+                    </div>
+
+                    <div class="featured-item">
+                        <a href="https://citymagazine.si/cinetrii-spletna-stran-ki-vam-predlaga-tematsko-sorodne-filme/">
+                            <img src="img/citymag.jpeg" alt="City Magazine">
+                            <p>City Magazine</p>
+                        </a>
+                    </div>
+
+                    <div class="featured-item">
+                        <a href="https://www.heise.de/news/Web-Tipps-Filmempfehlungen-Kunst-Trump-und-Websiteanalysen-5034566.html">
+                            <img src="img/heise.png" alt="Heise Online">
+                            <p>Heise Online</p>
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <p>Cinetrii started out as a project in Java but has since been migrated to Python, which is far more suitable for NLP 🙂</p>
+        </div>
+        </section>
+
+        <section id="tech">
+            <div class="section-header">
+                <h2>Tech I like</h2>
+                <span class="toggle">+</span>
+            </div>
+            <div class="section-content">
+                <ul>
+                    <li><a href="https://streamlit.io">Streamlit</a> - I have been using it since I saw it on Hacker News in 2019. Streamlit makes it easy to develop and deploy webapp tools and monitors for internal use. Before, python data scientists who wanted to bring a notebook to production had to use Flask, and I'd rather not get bogged down with frontend code.</li>
+                    <li><a href="https://github.com/AndyTheFactory/newspaper4k">Newspaper4k</a> - Continuation of Newspaper3k. Article text retrieval from news websites. Super useful for Cinetrii.</li>
+                    <li><a href="https://github.com/stefan-jansen/zipline-reloaded">Zipline-reloaded</a> - Actively maintained equity backtesting engine originally built by Quantopian before they merged with Robinhood. Perhaps not the first choice for a backtester in 2024, but coupled with an instituational data feed the Pipeline API is quite powerful.</li>
+                    <li>AI? Copilot helps me with sqlalchemy connections, Dockerfiles and all the stuff I don't touch on a regular basis. I built this personal web site using a lot of help from <a href="https://claude.ai/new">Claude.ai</a>.
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Nils Everling</p>
+    </footer>
+
+    <script>
+      document.querySelectorAll('.section-header').forEach(header => {
+          const content = header.nextElementSibling;
+          const toggle = header.querySelector('.toggle');
+
+          if (content.classList.contains('open')) {
+              content.style.maxHeight = content.scrollHeight + "px";
+          }
+
+          header.addEventListener('click', () => {
+              if (content.style.maxHeight) {
+                  content.style.maxHeight = null;
+                  toggle.textContent = '+';
+                  content.classList.remove('open');
+              } else {
+                  content.style.maxHeight = content.scrollHeight + "px";
+                  toggle.textContent = '-';
+                  content.classList.add('open');
+              }
+          });
+      });
+  </script>
+</body>
+</html>
